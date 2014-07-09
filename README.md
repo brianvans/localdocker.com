@@ -1,2 +1,2 @@
-localdocker.io
+localdocker.com
 ==============
