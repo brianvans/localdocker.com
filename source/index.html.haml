@@ -49,14 +49,7 @@
 .container
   %h3 Further reading:
   %ul
-    %li
-      %a http://www.fig.sh/
-    %li
-      %a https://github.com/noplay/docker-osx/issues
-    %li
-      %a https://stackoverflow.com/questions/22111060/difference-between-expose-and-publish-in-docker
-.container
-  %p.text-right
-    %small.text-muted
-      created with love and ruby by
-      %a{ :href => 'https://github.com/brianvans' } brianvans
+    - data.further_reading.each do |i|
+      %li
+        %a{ :href => "#{i}" }
+          =i
