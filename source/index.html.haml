@@ -9,3 +9,39 @@
       isn't it.
     %p
       %a{ :class => "btn btn-primary btn-lg", :role => "button", :href => "http://calmingmanatee.com" } Calm me
+
+.container
+  .col-xs-4 
+    %p.text-center
+      %span{ :class => "glyphicon glyphicon-wrench" }
+    %h4.text-center /etc/hosts?
+    %p
+      %a{ :href => 'https://github.com/noplay/docker-osx' } docker-osx
+      injects an entry into your /etc/hosts file for locally resolving
+      %b localdocker.
+      Now is probably a good time to ensure that it's there
+    %p A quick grep should look something like this:
+    -# TODO: there's gotta be a better way than this nonsense
+    %pre
+      = preserve "$ grep localdocker /etc/hosts\n172.16.42.43 localdocker"
+  .col-xs-4
+    %p.text-center
+      %span{ :class => "glyphicon glyphicon-cog" }
+    %h4.text-center Correct port?
+    %p If you're standing up a local dev environment, odds are good it's listening on a high numbered port for HTTP requests, rather than on plain old port 80.  Ensure you are hitting your service on the correct port.
+    %p
+      %b Rails?
+      %br Try localdocker:3000.
+      %b Sinatra?
+      %br How about localdocker:4567?
+      %b Django?
+      %br Perhaps localdocker:8000 is where it's hiding.
+  .col-xs-4
+    %p.text-center
+      %span{ :class => "glyphicon glyphicon-headphones" }
+    %h4.text-center Is anyone listening?
+    %p If your containerized service is listening on a loopback address (127.0.0.1), you're gonna have a bad time
+    %p With your container up, try running the following command to see whats listening and where:
+    -# TODO: there's gotta be a better way than this nonsense
+    %pre
+      = preserve "$ docker-osx ssh -c 'netstat -ltn | grep 127'"
