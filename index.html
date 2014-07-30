@@ -36,7 +36,7 @@
           <a href='https://github.com/noplay/docker-osx'>docker-osx</a>
           injects an entry into your /etc/hosts file for locally resolving
           <b>localdocker.</b>
-          Now is probably a good time to ensure that it's there
+          Now is probably a good time to ensure that it's there.
         </p>
         <p>A quick grep should look something like this:</p>
         <pre>$ grep localdocker /etc/hosts&#x000A;172.16.42.43 localdocker</pre>
@@ -61,7 +61,7 @@
           <span class='glyphicon glyphicon-headphones'></span>
         </p>
         <h4 class='text-center'>Is anyone listening?</h4>
-        <p>If your containerized service is listening on a loopback address (127.0.0.1), you're gonna have a bad time</p>
+        <p>If your containerized service is listening on a loopback address (127.0.0.1), you're gonna have a bad time.</p>
         <p>With your container up, try running the following command to see whats listening and where:</p>
         <pre>$ docker-osx ssh -c 'netstat -ltn | grep 127'</pre>
       </div>
